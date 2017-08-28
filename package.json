@@ -8,7 +8,6 @@
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
@@ -62,7 +61,7 @@
     "enzyme": "2.9.1",
     "eslint": "4.2.0",
     "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-react": "7.1.0",
+    "eslint-plugin-react": "7.3.0",
     "eslint-watch": "3.1.2",
     "extract-text-webpack-plugin": "3.0.0-rc.2",
     "file-loader": "0.11.2",
@@ -112,10 +111,10 @@
     "url": "https://github.com/coryhouse/react-slingshot"
   },
   "jest": {
-    "moduleNameMapper": { 
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/assetsTransformer.js", 
-    "\\.(css|less)$": "<rootDir>/tools/assetsTransformer.js" 
-    }  
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/tools/assetsTransformer.js"
+    }
   },
   "babel": {
     "presets": [
@@ -141,7 +140,7 @@
                 "ie": 9,
                 "uglify": true
               }
-           }
+            }
           ]
         ],
         "plugins": [
