@@ -15,15 +15,15 @@ export const getPage = (pageSlug = 'home') => {
   return (dispatch) => {
     // Returns a promise
     return Axios.get(apiUrl + 'get_page', {
-      params: {
-        slug: pageSlug
-      }
-    })
+        params: {
+          slug: pageSlug
+        }
+      })
       .then(response => {
         // Dispatch another action
         // to consume data
         console.log('page ', response)
-        dispatch(getPageSuccess(response.data));
+        dispatch(getPageSuccess(response.data))
       })
       .catch(error => {
         throw (error);

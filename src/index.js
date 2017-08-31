@@ -18,7 +18,7 @@ const store = configureStore();
 store.dispatch(pageActions.getPage('home'));
 
 render(
-	<Provider store={store}>
+  <Provider store={store}>
     <Router routes={routes} history={browserHistory} />
   </Provider>,
   document.getElementById('app')
