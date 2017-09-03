@@ -7,6 +7,7 @@ const Home = (props) => {
       <h1>
         Home Page
       </h1>
+      <json2html content={props.content} />
 
     </div>
   );

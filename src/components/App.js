@@ -1,26 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { configureStore } from '../store/configureStore';
+import * as pageActions from '../actions/pageActions';
+import Json2html from './common/Json2html';
 
+// const store = configureStore();
+// store.dispatch(pageActions.getPage('home'));
+console.log('""""', Json2html)
 const App = (props) => {
+  console.log('App props ', props)
   return (
     <div className="container">
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <a className="navbar-brand" href="#">Scotch Books</a>
-          </div>
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/books">Book</Link></li>
-              <li><Link to="/cart">Cart</Link></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      {/* Each smaller components */}
-      {props.children}
+      <Json2html />
     </div>
   );
 };

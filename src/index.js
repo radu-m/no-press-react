@@ -11,11 +11,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import configureStore from './store/configureStore';
 import * as localeActions from './actions/localeActions';
-import * as pageActions from './actions/pageActions';
 
 const store = configureStore();
-
-store.dispatch(pageActions.getPage('home'));
 
 render(
   <Provider store={store}>
