@@ -2,11 +2,11 @@
 import { combineReducers } from 'redux';
 
 import books from './bookReducers';
-import pages from './pageReducers';
+import jsn2htmlReducer from './json2htmlReducers';
 import locale from './localeReducers';
 
 export default combineReducers({
   books: books,
   locale: locale,
-  page: pages
+  json: jsn2htmlReducer
 });

@@ -1,17 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getPage} from '../../actions/pageActions';
-import {getPageSelector} from '../../reducers/pageReducers';
+import { getJson } from '../../actions/json2htmlActions';
+import { getPageSelector } from '../../reducers/json2htmlReducers';
 
 const mapStateToProps = (state) => {
-  console.log(';;;;',state)
+  console.log(';;;;', state)
   return {
-    page: state.page // getPageSelector(state)
+    json: state.json // getPageSelector(state)
   }
 }
 //Step 2: This connects the action, getArticles, to dispatch the action.
 const mapDispatchToProps = (dispatch) => ({
-  fetchPage: page => dispatch(getPage())
+  fetchJson: (props) => {
+    return dispatch(
+      getJson(props.edpoint, props.params)
+    );
+  }
 });
 
 //Step 4: Merging it to a prop makes it available in the component, 
@@ -22,13 +26,14 @@ class Json2html extends React.Component {
     super(props);
     console.log('<<<<', props)
   }
- 
+
   componentDidMount() {
-    const { fetchPage } = this.props;
-    fetchPage();
+    this.props.fetchJson(this.props);
   }
- 
+
   render() {
+    console.log('???????', this.props)
+    let root = React.createElement('div', null, null)
     return (<p>khjlkuhjl</p>);
   }
 }
