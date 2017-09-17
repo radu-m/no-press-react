@@ -65,7 +65,7 @@ export default {
         exclude: /(node_modules|bower_coponents)/,
         loader: 'babel-loader',
         query: {
-          plugins: ['transform-decorators-legacy']
+          plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
         }
       }
     ]

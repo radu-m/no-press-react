@@ -5,21 +5,21 @@ export default function(state = initialState.json2html, action) {
   console.log('///////////;',action)
   // Here I ignore or handle each action type.
   switch (action.type) {
-    case 'FETCH_JSON_START':
+    case 'FETCH_JSON_PENDING':
       return {
         ...state,
         fetching: true
       };
 
-    case 'FETCH_JSON_SUCCESS':
+    case 'FETCH_JSON_FULFILLED':
       return {
         ...state,
         fetching: false,
         fetched: true,
-        json: action.payload()
+        json: action.payload.data
       };
 
-    case 'FETCH_JSON_ERROR':
+    case 'FETCH_JSON_REJECTED':
       return {
         ...state,
         payload: action.payload

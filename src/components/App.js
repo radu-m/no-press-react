@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Switch, NavLink } from 'react-router-dom';
-import Json2Html from '../containers/Json2Html';
+import HtmlFromJson from "./common/HtmlFromJson";
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -24,7 +24,7 @@ class App extends React.Component {
         </div>
 
         <Switch>
-          <Route exact path="/" component={Json2Html}/>
+          <Route exact path="/" component={HtmlFromJson}/>
         </Switch>
       </div>
     );

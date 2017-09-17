@@ -15,8 +15,10 @@ export function getJson (settings) {
         {
           params: settings.params
         }
-      ),
-      settings
+      ).then((result) => {
+      console.log('-----', result);
+      return result.data;
+      })
     });
   };
 }
