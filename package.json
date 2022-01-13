@@ -25,24 +25,27 @@
     "test:cover:CI": "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "test:watch": "npm run test -- --watch",
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
-    "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
+    "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
-    "axios": "0.16.2",
-    "bootstrap": "3.3.7",
-    "jquery": "3.2.1",
+    "axios": "0.21.3",
+    "bootstrap": "3.4.1",
+    "jquery": "3.5.0",
     "object-assign": "4.1.1",
-    "react": "15.6.1",
-    "react-dom": "15.6.1",
+    "react": "16.5.0",
+    "react-dom": "16.5.0",
     "react-redux": "5.0.6",
     "react-router": "4.2.0",
     "react-router-dom": "4.2.2",
     "react-router-redux": "5.0.0-alpha.6",
     "redux": "3.7.2",
     "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "autoprefixer": "7.1.4",
@@ -255,5 +258,6 @@
       "react/sort-comp": 1
     },
     "globals": {}
-  }
+  },
+  "snyk": true
 }
